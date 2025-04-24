@@ -41,7 +41,7 @@ fun Home_Screen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.DarkGray)) {
+            .background(Color.Black)) {
         Spacer(modifier = Modifier.height(25.dp))
         Text("Hillary's app",
             color = Color.Magenta,
