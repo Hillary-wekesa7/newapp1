@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -18,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -29,6 +31,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bingo.newproj2.R
 import com.bingo.newproj2.navigation.ROUTE_LOGIN
+import com.bingo.newproj2.navigation.ROUTE_MYAPP
 import com.bingo.newproj2.navigation.ROUTE_REGISTER
 
 @Composable
@@ -38,8 +41,8 @@ fun Home_Screen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Yellow)) {
-
+            .background(Color.DarkGray)) {
+        Spacer(modifier = Modifier.height(25.dp))
         Text("Hillary's app",
             color = Color.Magenta,
             fontSize = 30.sp,
@@ -64,21 +67,36 @@ fun Home_Screen(navController: NavHostController) {
             )
         }
         Spacer(modifier = Modifier.height(30.dp))
-        Button(onClick = {navController.navigate(ROUTE_REGISTER)},
-            modifier = Modifier.width(250.dp),
+        Button(onClick = {
+            navController.navigate(ROUTE_MYAPP)
+        },
+            colors = ButtonDefaults.buttonColors(Color.Cyan),
+            modifier = Modifier.width(400.dp)
+        ) {
+            Text("MY APP",
+                color = Color.Black,
+                fontFamily = FontFamily.Monospace,
+                fontSize = 24.sp)
 
+        }
+
+        Spacer(modifier = Modifier.height(30.dp))
+        Button(onClick = {navController.navigate(ROUTE_REGISTER)},
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(Color.Cyan)
             ) {
             Text("Click to register",
                 fontSize = 24.sp,
                 fontFamily = FontFamily.Cursive,
+                color = Color.Black,
             )
         }
-        Spacer(modifier = Modifier.height(30.dp))
-        Image(painter = painterResource(id= R.drawable.download),
+        Spacer(modifier = Modifier.height(10.dp))
+        Image(painter = painterResource(id= R.drawable.aapp2),
             contentDescription = "Yeager",
             modifier=Modifier
-                .size(600.dp)
-                .clip(shape = CircleShape)
+                .size(700.dp)
+                .clip(shape = RectangleShape)
 
         )
     }

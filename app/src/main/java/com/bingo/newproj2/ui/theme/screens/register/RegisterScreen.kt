@@ -55,18 +55,16 @@ fun Register_Screen(navController: NavHostController) {
                 fontFamily = FontFamily.Serif,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.Red, RoundedCornerShape(10.dp))
                     .padding(6.dp)
             ) })
-        OutlinedTextField(value = email,
-            onValueChange = {email=it},
+        OutlinedTextField(value = password,
+            onValueChange = {password=it},
             label = { Text("Enter your password",
                 color = Color.Green,
                 fontSize = 25.sp,
                 fontFamily = FontFamily.Serif,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color.Red, RoundedCornerShape(10.dp))
                     .padding(6.dp)
             ) })
         Spacer(modifier = Modifier.height(30.dp))

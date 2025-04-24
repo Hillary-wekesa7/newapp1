@@ -46,10 +46,10 @@ fun Splash_Screen(navController: NavHostController) {
 
     Column (modifier = Modifier
             .fillMaxSize()
-            .background(color = newcolor),
+            .background(color = Color.White),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally){
-        Image(painter = painterResource(id= R.drawable.splash),
+        Image(painter = painterResource(id= R.drawable.aapp1),
             contentDescription = "Jinwoo",
             modifier=Modifier
                 .height(600.dp)
@@ -58,8 +58,11 @@ fun Splash_Screen(navController: NavHostController) {
         Text("Welcome",
             fontSize = 100.sp,
             fontFamily = FontFamily.Cursive,
-            color = Color.LightGray
+            color = newcolor,
         )
+        Text("to my app",
+            fontSize = 45.sp,
+            color = newcolor)
 
     }
 }
