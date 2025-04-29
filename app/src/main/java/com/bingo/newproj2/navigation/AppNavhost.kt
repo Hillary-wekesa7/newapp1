@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.bingo.newproj2.ui.theme.screens.calculator.Calculator_Screen
+import com.bingo.newproj2.ui.theme.screens.dashboard.Dashboard_Screen
 import com.bingo.newproj2.ui.theme.screens.home.Home_Screen
 import com.bingo.newproj2.ui.theme.screens.intent.Intent_Screen
 import com.bingo.newproj2.ui.theme.screens.login.Login_screen
@@ -42,6 +43,9 @@ fun AppNavHost(modifier: Modifier = Modifier,
          }
          composable(ROUTE_INTENT){
              Intent_Screen(navController)
+         }
+         composable(ROUTE_DASHBOARD){
+             Dashboard_Screen(navController)
          }
 
 

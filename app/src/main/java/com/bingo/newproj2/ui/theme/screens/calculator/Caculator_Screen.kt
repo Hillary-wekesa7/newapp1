@@ -38,10 +38,7 @@ fun Calculator_Screen(navController:NavHostController) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color.LightGray)){
-        Text("Answer here",
-            color = Color.Black,
-            fontSize = 25.sp,
-            fontFamily = FontFamily.Serif,)
+
         OutlinedTextField(value = fnum,
             onValueChange = {fnum=it},
             label = { Text("Enter your first number:",
@@ -62,28 +59,73 @@ fun Calculator_Screen(navController:NavHostController) {
                     .fillMaxWidth()
                     .padding(6.dp)
             ) })
-        Button(onClick = {},
+        Text("my answer is:",
+            color = Color.Black,
+            fontSize = 25.sp,
+            fontFamily = FontFamily.Serif,)
+        Text(answer,
+            color = Color.Green,
+            fontSize = 25.sp,
+            fontFamily = FontFamily.Serif,
+            modifier = Modifier.background(color = Color.Black))
+        Button(onClick = {
+            val myfirstnum=fnum.text.trim()
+            val mysecontnum=snum.text.trim()
+            if (myfirstnum.isEmpty() &&mysecontnum.isEmpty()){
+                answer="Please fill in all detail"
+            }else{
+                val myanswer=myfirstnum.toDouble() + mysecontnum.toDouble()
+                answer=myanswer.toString()
+            }
+        },
             modifier = Modifier.width(250.dp)) {
             Text("+",
                 color = Color.Green,
                 fontSize = 24.sp,
                 fontFamily = FontFamily.Serif)
         }
-        Button(onClick = {},
+        Button(onClick = {
+            val myfirstnum=fnum.text.trim()
+            val mysecontnum=snum.text.trim()
+            if (myfirstnum.isEmpty() &&mysecontnum.isEmpty()){
+                answer="Please fill in all detail"
+            }else{
+                val myanswer=myfirstnum.toDouble() * mysecontnum.toDouble()
+                answer=myanswer.toString()
+            }
+        },
             modifier = Modifier.width(250.dp)) {
             Text("*",
                 color = Color.Green,
                 fontSize = 24.sp,
                 fontFamily = FontFamily.Serif)
         }
-        Button(onClick = {},
+        Button(onClick = {
+            val myfirstnum=fnum.text.trim()
+            val mysecontnum=snum.text.trim()
+            if (myfirstnum.isEmpty() &&mysecontnum.isEmpty()){
+                answer="Please fill in all detail"
+            }else{
+                val myanswer=myfirstnum.toDouble() - mysecontnum.toDouble()
+                answer=myanswer.toString()
+            }
+        },
             modifier = Modifier.width(250.dp)) {
             Text("-",
                 color = Color.Green,
                 fontSize = 24.sp,
                 fontFamily = FontFamily.Serif)
         }
-        Button(onClick = {},
+        Button(onClick = {
+            val myfirstnum=fnum.text.trim()
+            val mysecontnum=snum.text.trim()
+            if (myfirstnum.isEmpty() &&mysecontnum.isEmpty()){
+                answer="Please fill in all detail"
+            }else{
+                val myanswer=myfirstnum.toDouble() / mysecontnum.toDouble()
+                answer=myanswer.toString()
+            }
+        },
             modifier = Modifier.width(250.dp)) {
             Text("/",
                 color = Color.Green,
