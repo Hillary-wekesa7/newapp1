@@ -30,32 +30,31 @@ import androidx.core.provider.FontsContractCompat.Columns
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.bingo.newproj2.R
+import com.bingo.newproj2.navigation.ROUTE_DASHBOARD
 import com.bingo.newproj2.navigation.ROUTE_LOGIN
+import com.bingo.newproj2.navigation.ROUTE_MALL
 import com.bingo.newproj2.navigation.ROUTE_MYAPP
 import com.bingo.newproj2.navigation.ROUTE_REGISTER
 
 @Composable
 fun Home_Screen(navController: NavHostController) {
 
-    Column(verticalArrangement = Arrangement.Top,
+    Column(verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)) {
-        Spacer(modifier = Modifier.height(25.dp))
         Text("Hillary's app",
             color = Color.Magenta,
             fontSize = 30.sp,
             fontFamily = FontFamily.SansSerif,
             )
-        Spacer(modifier = Modifier.height(30.dp))
         Text("Welcome to my app",
             color = Color.Green,
             fontSize = 34.sp,
             fontFamily = FontFamily.Cursive,
             fontWeight = FontWeight.Bold,
         )
-        Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {navController.navigate(ROUTE_LOGIN)},
             modifier=Modifier.width(400.dp),
             colors = ButtonDefaults.buttonColors(Color.Cyan)
@@ -66,7 +65,6 @@ fun Home_Screen(navController: NavHostController) {
                 fontSize = 24.sp
             )
         }
-        Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {
             navController.navigate(ROUTE_MYAPP)
         },
@@ -79,8 +77,6 @@ fun Home_Screen(navController: NavHostController) {
                 fontSize = 24.sp)
 
         }
-
-        Spacer(modifier = Modifier.height(30.dp))
         Button(onClick = {navController.navigate(ROUTE_REGISTER)},
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(Color.Cyan)
@@ -91,11 +87,31 @@ fun Home_Screen(navController: NavHostController) {
                 color = Color.Black,
             )
         }
-        Spacer(modifier = Modifier.height(10.dp))
+
+        Button(onClick = {navController.navigate(ROUTE_DASHBOARD)},
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(Color.Cyan)
+        ) {
+            Text("Dashboard",
+                fontSize = 24.sp,
+                fontFamily = FontFamily.Cursive,
+                color = Color.Black,
+            )
+        }
+        Button(onClick = {navController.navigate(ROUTE_MALL)},
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(Color.Cyan)
+        ) {
+            Text("Dashboard2",
+                fontSize = 24.sp,
+                fontFamily = FontFamily.Cursive,
+                color = Color.Black,
+            )
+        }
         Image(painter = painterResource(id= R.drawable.aapp2),
             contentDescription = "Yeager",
             modifier=Modifier
-                .size(700.dp)
+                .size(400.dp)
                 .clip(shape = RectangleShape)
 
         )

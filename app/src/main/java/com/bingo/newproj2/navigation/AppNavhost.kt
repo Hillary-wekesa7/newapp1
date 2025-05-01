@@ -12,6 +12,7 @@ import com.bingo.newproj2.ui.theme.screens.dashboard.Dashboard_Screen
 import com.bingo.newproj2.ui.theme.screens.home.Home_Screen
 import com.bingo.newproj2.ui.theme.screens.intent.Intent_Screen
 import com.bingo.newproj2.ui.theme.screens.login.Login_screen
+import com.bingo.newproj2.ui.theme.screens.mall.Mall_Screen
 import com.bingo.newproj2.ui.theme.screens.myapp.MyAppScreen
 import com.bingo.newproj2.ui.theme.screens.register.Register_Screen
 import com.bingo.newproj2.ui.theme.screens.splash.Splash_Screen
@@ -46,6 +47,9 @@ fun AppNavHost(modifier: Modifier = Modifier,
          }
          composable(ROUTE_DASHBOARD){
              Dashboard_Screen(navController)
+         }
+         composable(ROUTE_MALL){
+             Mall_Screen(navController)
          }
 
 
