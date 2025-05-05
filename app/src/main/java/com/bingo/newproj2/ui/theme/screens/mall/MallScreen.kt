@@ -62,7 +62,7 @@ fun Mall_Screen(navController: NavHostController) {
 //        BottomBar
         bottomBar = {
             NavigationBar(
-                containerColor = newcolor,
+                containerColor = Color.Magenta,
             ) {
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
@@ -126,7 +126,8 @@ fun Mall_Screen(navController: NavHostController) {
                         shape = RoundedCornerShape(bottomStart = 10.dp, bottomEnd = 10.dp),
                         colors = CardDefaults.cardColors()
                     ) {
-                        Text(text = "Hi Samantha", fontSize = 20.sp)
+                        Text(text = "Hi", fontSize = 20.sp)
+                        Text(text = "How are you?", fontSize = 20.sp)
                         Spacer(modifier = Modifier.height(20.dp))
                         Text(text = "Here are your projects")
 
@@ -144,7 +145,7 @@ fun Mall_Screen(navController: NavHostController) {
                                 //Card1
                                 Card(
                                     modifier = Modifier
-                                        .width(120.dp)
+                                        .width(150.dp)
                                         .height(300.dp)
                                         .clickable { navController.navigate(ROUTE_HOME) },
                                     elevation = CardDefaults.cardElevation(),
@@ -179,7 +180,7 @@ fun Mall_Screen(navController: NavHostController) {
                                 //Card2
                                 Card(
                                     modifier = Modifier
-                                        .width(120.dp)
+                                        .width(150.dp)
                                         .height(300.dp)
                                         .clickable { navController.navigate(ROUTE_HOME) },
                                     elevation = CardDefaults.cardElevation(),
@@ -210,11 +211,11 @@ fun Mall_Screen(navController: NavHostController) {
                                 }
 
                                 //End of Card2
-                                Spacer(modifier = Modifier.width(5.dp))
+                                Spacer(modifier = Modifier.width(10.dp))
                                 //Card2
                                 Card(
                                     modifier = Modifier
-                                        .width(120.dp)
+                                        .width(150.dp)
                                         .height(300.dp)
                                         .clickable { navController.navigate(ROUTE_HOME) },
                                     elevation = CardDefaults.cardElevation(),
@@ -222,7 +223,7 @@ fun Mall_Screen(navController: NavHostController) {
                                 ) {
                                     Column(
                                         modifier = Modifier.fillMaxSize()
-                                            .padding(20.dp),
+                                            .padding(30.dp),
                                         horizontalAlignment = Alignment.Start,
                                         verticalArrangement = Arrangement.Center
                                     ) {
